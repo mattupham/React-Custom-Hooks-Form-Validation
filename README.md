@@ -1,6 +1,5 @@
 # React Hooks Tutorial (Custom Hooks) | Form Validation made easy | Javascript
-Repo to accompany this tutorial on Youtube: https://youtu.be/SXIfnNvYrZE
-Made with create-react-app
+Repo to accompany this tutorial on Youtube: https://youtu.be/SXIfnNvYrZE (Made with create-react-app)
 
 # Create React App [![Build Status](https://dev.azure.com/facebook/create-react-app/_apis/build/status/facebook.create-react-app?branchName=master)](https://dev.azure.com/facebook/create-react-app/_build/latest?definitionId=1&branchName=master) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/facebook/create-react-app/pulls)
 
