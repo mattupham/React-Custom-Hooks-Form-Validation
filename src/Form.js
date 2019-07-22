@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import useForm from "./useForm";
-import validate from "./validateLogin";
+import { validate, fields } from "./validation";
 import "./index.css";
 
 const Form = () => {
   const { handleChange, handleSubmit, values, errors } = useForm(
     submit,
-    validate
+    validate,
+    fields,
   );
 
   function submit() {
@@ -40,6 +41,19 @@ const Form = () => {
               onChange={handleChange}
             />
             {errors.password && <p className="error">{errors.password}</p>}
+          </div>
+        </div>
+        <div>
+          <label>Telephone</label>
+          <div>
+            <input
+              className={`${errors.telephone && "inputError"}`}
+              type="tel"
+              name="telephone"
+              value={values.telephone}
+              onChange={handleChange}
+            />
+            {errors.telephone && <p className="error">{errors.telephone}</p>}
           </div>
         </div>
         <button type="submit">Submit</button>

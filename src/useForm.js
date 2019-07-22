@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 
-const useForm = (callback, validate) => {
-  const [values, setValues] = useState({ email: "", password: "" });
+const useForm = (callback, validate, fields) => {
+  const valuesInitialState = fields.reduce((acc, field) => {
+    acc[field] = '';
+    return acc;
+  }, {});
+  const [values, setValues] = useState(valuesInitialState);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
