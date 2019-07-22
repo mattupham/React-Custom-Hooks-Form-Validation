@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 
 const useForm = (callback, validate, fields) => {
-  console.log(fields)
   const valuesInitialState = fields.reduce((acc, field) => {
-    console.log(field)
     acc[field] = '';
     return acc;
   }, {});
