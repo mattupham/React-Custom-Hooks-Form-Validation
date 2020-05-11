@@ -14,6 +14,8 @@ let formValues = { email: "", password: "" };
   );
 
   function submit() {
+    // Submit form values
+    console.log(values);
     console.log("Submitted Succesfully");
   }
 
