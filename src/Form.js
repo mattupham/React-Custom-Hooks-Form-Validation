@@ -4,9 +4,13 @@ import validate from "./validateLogin";
 import "./index.css";
 
 const Form = () => {
-  const { handleChange, handleSubmit, values, errors } = useForm(
+// Set default form values you can changed it base on your values form
+let formValues = { email: "", password: "" };
+//call useForm
+  const { handleChange, handleSubmit, values, errors,  } = useForm(
     submit,
-    validate
+    validate,
+    formValues
   );
 
   function submit() {
