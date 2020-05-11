@@ -27,7 +27,7 @@ const useForm = (callback, validate, formValues) => {
       clear(formValues);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [errors]);
+  }, [errors, isSubmitting]);
 
   // Clear form input by return initial value
   const clear = formValues => {
