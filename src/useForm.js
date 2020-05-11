@@ -23,8 +23,16 @@ const useForm = (callback, validate, formValues) => {
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       callback();
+      // clear form after send
+      clear(formValues);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [errors]);
+
+  // Clear form input by return initial value
+  const clear = formValues => {
+    setValues(formValues);
+  };
 
   return {
     handleChange,
