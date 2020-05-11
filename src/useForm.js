@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 
-const useForm = (callback, validate) => {
-  const [values, setValues] = useState({ email: "", password: "" });
+const useForm = (callback, validate, formValues) => {
+  // set form values
+  const [values, setValues] = useState(formValues);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -22,8 +23,16 @@ const useForm = (callback, validate) => {
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       callback();
+      // clear form after send
+      clear(formValues);
     }
-  }, [errors]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [errors, isSubmitting]);
+
+  // Clear form input by return initial value
+  const clear = formValues => {
+    setValues(formValues);
+  };
 
   return {
     handleChange,

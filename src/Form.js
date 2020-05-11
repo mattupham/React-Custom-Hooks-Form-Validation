@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import useForm from "./useForm";
 import validate from "./validateLogin";
 import "./index.css";
 
 const Form = () => {
-  const { handleChange, handleSubmit, values, errors } = useForm(
+// Set default form values you can changed it base on your values form
+let formValues = { email: "", password: "" };
+//call useForm
+  const { handleChange, handleSubmit, values, errors,  } = useForm(
     submit,
-    validate
+    validate,
+    formValues
   );
 
   function submit() {
+    // Submit form values
+    console.log(values);
     console.log("Submitted Succesfully");
   }
 
